@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="WhatSing">
+	<meta name="author" content="Korhan Akcura" >
+	<title>WhatSing</title>
+
+	<link rel="icon" href="images/favicon.ico">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/master.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<a href="index.html" class="navbar-brand">WhatSing</a>
+		</div>
+	</nav>
+
+	<!-- Page Content -->
+	<div class="container">
+		<div class="row text-left text-lg-left">
+		<form action="/action_page.php" method="get">
+			Singer: <input type="text" name="singer"><br>
+			Song: <input type="text" name="song"><br>
+			<button type="submit">Submit</button>
+			<button type="submit" formmethod="post">Submit using POST</button>
+		</form>
+		</div>
+	</div>
+
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="container">
+			<p class="navbar-text pull-left">© 2019 - WhatSing</p>
+		</div>
+	</div>
+
+	<!-- Load JS at the end -->
+	<script type="text/javascript" src="js/libs/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+
+</body>
+</html>
