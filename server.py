@@ -51,7 +51,7 @@ def listen():
 
 		full_sound.export(filename, format='mp3')
 
-	return filename 
+	return singer + " - " + song + ".mp3" 
 
 if __name__ == '__main__':
 	handler = RotatingFileHandler('server.log', maxBytes=10000, backupCount=1)

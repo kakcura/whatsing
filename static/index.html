@@ -23,15 +23,30 @@
 	</nav>
 
 	<!-- Page Content -->
-	<div class="container">
-		<div class="row text-left text-lg-left">
-		<form action="/action_page.php" method="get">
-			Singer: <input type="text" name="singer"><br>
-			Song: <input type="text" name="song"><br>
-			<button type="submit">Submit</button>
-			<button type="submit" formmethod="post">Submit using POST</button>
-		</form>
+	<div id="main" class="container">
+		<div class="row col-xs-12 row col-md-4">
+			<div class="panel-body">.
+				<img src="images/watsing_logo.png" class="img-fluid" alt="Responsive image"><br/><br/>
+
+					<div class="form-group">
+						<label for="singer">Singer</label>
+						<input type="text" class="form-control" id="singer" aria-describedby="singerHelp" placeholder="Enter a singer">
+						<small id="singerHelp" class="form-text text-muted">Please enter full name of the singer.</small>
+					</div>
+					<div class="form-group">
+						<label for="song">Song</label>
+						<input type="text" class="form-control" id="song" aria-describedby="songHelp" placeholder="Enter a song">
+						<small id="songHelp" class="form-text text-muted">Please enter full name of the song.</small>
+					</div>
+					<button type="submit" onclick="doSomething()" class="btn btn-primary">Submit</button>
+
+			</div>
 		</div>
+	</div>
+
+	<div id="loader" class="container" style="display: none;">
+		<img src="images/watson_logo.gif" class="img-fluid" alt="Responsive image">
+		<div><b>Loading the song...</b></div>
 	</div>
 
 	<div class="navbar navbar-inverse navbar-fixed-bottom">
@@ -43,6 +58,31 @@
 	<!-- Load JS at the end -->
 	<script type="text/javascript" src="js/libs/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+		function doSomething() {
+			$("#main").hide();
+			$("#loader").show();
+			var singer = $("#singer").val();
+			var song = $("#song").val();
+			$.ajax({
+				type: "POST",
+				url: "/sing",
+				data: JSON.stringify({ singer: singer, song: song }),
+				contentType: "application/json; charset=utf-8",
+				dataType: "text",
+				success: function(data){
+					window.location.href = "/" + data; 
+				},
+				failure: function(errMsg) {
+					console.log(errMsg);
+				}
+			});
+
+			return false;
+		}
+	</script>
+
 
 </body>
 </html>

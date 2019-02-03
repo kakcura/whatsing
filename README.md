@@ -12,7 +12,7 @@ python -m pip install -r requirements.txt
 RUN
 ===
 ```bash
-$ python server.py &
+$ python server.py
 ```
 
 TEST
