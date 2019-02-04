@@ -14,8 +14,8 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__, static_url_path='')
 
-WATSON_API_KEY = "DFxGaMtBR1VFIbhtp6IIHMkvGXcRDOhZCNtDLsvkL66c"
-WATSON_URL = 'https://gateway-wdc.watsonplatform.net/text-to-speech/api/v1/synthesize'
+WATSON_API_KEY = "Put your's here."
+WATSON_URL = "Put your's here."
 
 @app.route("/", methods=['GET', 'POST'])
 def root(): 
